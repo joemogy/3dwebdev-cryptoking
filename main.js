@@ -245,7 +245,7 @@ scene.add( sphere );
 
 const joeTexture = new THREE.TextureLoader().load('joe.png');
 
-const joe = new THREE.Mesh(new THREE.BoxGeometry(36, 66, 36), new THREE.MeshBasicMaterial({ map: joeTexture }));
+const joe = new THREE.Mesh(new THREE.BoxGeometry(36, 63, 36), new THREE.MeshBasicMaterial({ map: joeTexture }));
 
 scene.add(joe);
 
@@ -261,7 +261,7 @@ scene.add(joeai);
 
 const josephaiTexture = new THREE.TextureLoader().load('josephai.png');
 
-const josephai = new THREE.Mesh(new THREE.BoxGeometry(36, 36, 36), new THREE.MeshBasicMaterial({ map: josephaiTexture }));
+const josephai = new THREE.Mesh(new THREE.BoxGeometry(66, 66, 66), new THREE.MeshBasicMaterial({ map: josephaiTexture }));
 
 scene.add(josephai);
 
@@ -269,7 +269,7 @@ scene.add(josephai);
 
 const josephTexture = new THREE.TextureLoader().load('joseph.png');
 
-const joseph = new THREE.Mesh(new THREE.BoxGeometry(36, 36, 36), new THREE.MeshBasicMaterial({ map: josephTexture }));
+const joseph = new THREE.Mesh(new THREE.BoxGeometry(66, 66, 66), new THREE.MeshBasicMaterial({ map: josephTexture }));
 
 scene.add(joseph);
 
@@ -296,17 +296,17 @@ joe.position.setX(-99);
 joe.position.y = 66;
 joe.position.z = 99;
 
-joeai.position.setX(-99);
-joeai.position.y = 66;
+joeai.position.setX(111);
+joeai.position.y = 69;
 joeai.position.z = -99;
 
-josephai.position.setX(111);
-josephai.position.y = 66;
-josephai.position.z = 111;
+josephai.position.setX(-99);
+josephai.position.y = 69;
+josephai.position.z = -99;
 
-joseph.position.setX(66);
-joseph.position.y = 48;
-joseph.position.z = -66;
+joseph.position.setX(111);
+joseph.position.y = 66;
+joseph.position.z = 111;
 
 torus.position.setX(-15);
 torus.position.y = 15;
