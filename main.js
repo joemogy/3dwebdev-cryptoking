@@ -245,9 +245,17 @@ scene.add( sphere );
 
 const joeTexture = new THREE.TextureLoader().load('joe.png');
 
-const joe = new THREE.Mesh(new THREE.BoxGeometry(36, 69, 36), new THREE.MeshBasicMaterial({ map: joeTexture }));
+const joe = new THREE.Mesh(new THREE.BoxGeometry(36, 66, 36), new THREE.MeshBasicMaterial({ map: joeTexture }));
 
 scene.add(joe);
+
+//joeai
+
+const joeaiTexture = new THREE.TextureLoader().load('joeai.png');
+
+const joeai = new THREE.Mesh(new THREE.BoxGeometry(66, 66, 66), new THREE.MeshBasicMaterial({ map: joeaiTexture }));
+
+scene.add(joeai);
 
 //joseph
 
@@ -276,13 +284,17 @@ moon2.position.setX(99);
 moon2.position.y = 99;
 moon2.position.z = 99;
 
-joseph.position.setX(33);
-joseph.position.y = 48;
-joseph.position.z = -36;
-
 joe.position.setX(-66);
 joe.position.y = 66;
 joe.position.z = 99;
+
+joeai.position.setX(-99);
+joeai.position.y = 66;
+joeai.position.z = -99;
+
+joseph.position.setX(33);
+joseph.position.y = 48;
+joseph.position.z = -33;
 
 torus.position.setX(-15);
 torus.position.y = 15;
@@ -342,13 +354,17 @@ function moveCamera() {
   moon2.rotation.y += 0.03;
   moon2.rotation.z += 0.03;
 
-  joseph.rotation.x += 0.01;
-  joseph.rotation.y += 0.01;
-  joseph.rotation.z += 0.01;
-
   joe.rotation.x += 0.01;
   joe.rotation.y += 0.01;
   joe.rotation.z += 0.01;
+
+  joeai.rotation.x += 0.01;
+  joeai.rotation.y += 0.01;
+  joeai.rotation.z += 0.01;
+
+  joseph.rotation.x += 0.01;
+  joseph.rotation.y += 0.01;
+  joseph.rotation.z += 0.01;
 
   camera.position.x = t * -0.001;
   camera.rotation.y = t * -0.001;
@@ -402,8 +418,8 @@ function animate() {
     jupiter.mesh.rotateY(0.04);
     saturn.mesh.rotateY(0.038);
     uranus.mesh.rotateY(0.03);
-    neptune.mesh.rotateY(0.032);
-    pluto.mesh.rotateY(0.008);
+    neptune.mesh.rotateY(0.033);
+    pluto.mesh.rotateY(0.009);
 
     //Around-sun-rotation
     mercury.obj.rotateY(0.04);
@@ -414,8 +430,8 @@ function animate() {
     jupiter.obj.rotateY(0.002);
     saturn.obj.rotateY(0.0009);
     uranus.obj.rotateY(0.0004);
-    neptune.obj.rotateY(0.0001);
-    pluto.obj.rotateY(0.00007);
+    neptune.obj.rotateY(0.00033);
+    pluto.obj.rotateY(0.00025);
 
 
   torus.rotation.x += 0.003;
@@ -474,6 +490,10 @@ function animate() {
   joe.rotation.x += 0.0003;
   joe.rotation.y += 0.003;
   joe.rotation.z += 0.0003;
+
+  joeai.rotation.x += 0.0003;
+  joeai.rotation.y += 0.003;
+  joeai.rotation.z += 0.0003;
 
   joseph.rotation.x += 0.0003;
   joseph.rotation.y += 0.003;
