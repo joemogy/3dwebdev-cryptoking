@@ -257,13 +257,13 @@ const joeai = new THREE.Mesh(new THREE.BoxGeometry(66, 66, 66), new THREE.MeshBa
 
 scene.add(joeai);
 
-//joeai2
+//joeaii
 
-const joeai2Texture = new THREE.TextureLoader().load('joeai2.png');
+const joeaiiTexture = new THREE.TextureLoader().load('joeaii.png');
 
-const joeai2 = new THREE.Mesh(new THREE.BoxGeometry(66, 66, 66), new THREE.MeshBasicMaterial({ map: joeai2Texture }));
+const joeaii = new THREE.Mesh(new THREE.BoxGeometry(66, 66, 66), new THREE.MeshBasicMaterial({ map: joeaiiTexture }));
 
-scene.add(joeai2);
+scene.add(joeaii);
 
 //joseph
 
@@ -300,9 +300,9 @@ joeai.position.setX(-99);
 joeai.position.y = 66;
 joeai.position.z = -99;
 
-joeai2.position.setX(133);
-joeai2.position.y = 66;
-joeai2.position.z = 99;
+joeaii.position.setX(133);
+joeaii.position.y = 66;
+joeaii.position.z = 99;
 
 joseph.position.setX(33);
 joseph.position.y = 48;
@@ -374,9 +374,9 @@ function moveCamera() {
   joeai.rotation.y += 0.01;
   joeai.rotation.z += 0.01;
 
-  joeai2.rotation.x += 0.01;
-  joeai2.rotation.y += 0.01;
-  joeai2.rotation.z += 0.01;
+  joeaii.rotation.x += 0.01;
+  joeaii.rotation.y += 0.01;
+  joeaii.rotation.z += 0.01;
 
   joseph.rotation.x += 0.01;
   joseph.rotation.y += 0.01;
@@ -511,9 +511,9 @@ function animate() {
   joeai.rotation.y += 0.003;
   joeai.rotation.z += 0.0003;
 
-  joeai2.rotation.x += 0.0003;
-  joeai2.rotation.y += 0.003;
-  joeai2.rotation.z += 0.0003;
+  joeaii.rotation.x += 0.0003;
+  joeaii.rotation.y += 0.003;
+  joeaii.rotation.z += 0.0003;
 
   joseph.rotation.x += 0.0003;
   joseph.rotation.y += 0.003;
