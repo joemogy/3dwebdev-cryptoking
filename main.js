@@ -43,7 +43,7 @@ const geometry = new THREE.TorusGeometry(266, 1.5, 33, 111);
 const material = new THREE.MeshStandardMaterial({ color: 0xff00ff, wireframe: true });
 const torus = new THREE.Mesh(geometry, material);
 
-scene.add(torus);  
+scene.add(torus);
 
 // Torus 2
 
@@ -159,17 +159,17 @@ Array(666).fill().forEach(addStar);
 
 // Background
 
- const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
 // scene.background = spaceTexture;
 
 const cubeTextureLoader = new THREE.CubeTextureLoader();
 scene.background = cubeTextureLoader.load([
-    starsTexture,
-    starsTexture,
-    starsTexture,
-    starsTexture,
-    starsTexture,
-    starsTexture
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture,
+  starsTexture
 ]);
 
 const textureLoader = new THREE.TextureLoader();
@@ -185,30 +185,30 @@ const sun = new THREE.Mesh(sunGeo, sunMat);
 scene.add(sun);
 
 function createPlanete(size, texture, position, ring) {
-    const geo = new THREE.SphereGeometry(size, 30, 30);
-    const mat = new THREE.MeshStandardMaterial({
-        map: textureLoader.load(texture)
+  const geo = new THREE.SphereGeometry(size, 30, 30);
+  const mat = new THREE.MeshStandardMaterial({
+    map: textureLoader.load(texture)
+  });
+  const mesh = new THREE.Mesh(geo, mat);
+  const obj = new THREE.Object3D();
+  obj.add(mesh);
+  if (ring) {
+    const ringGeo = new THREE.RingGeometry(
+      ring.innerRadius,
+      ring.outerRadius,
+      32);
+    const ringMat = new THREE.MeshBasicMaterial({
+      map: textureLoader.load(ring.texture),
+      side: THREE.DoubleSide
     });
-    const mesh = new THREE.Mesh(geo, mat);
-    const obj = new THREE.Object3D();
-    obj.add(mesh);
-    if(ring) {
-        const ringGeo = new THREE.RingGeometry(
-            ring.innerRadius,
-            ring.outerRadius,
-            32);
-        const ringMat = new THREE.MeshBasicMaterial({
-            map: textureLoader.load(ring.texture),
-            side: THREE.DoubleSide
-        });
-        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
-        obj.add(ringMesh);
-        ringMesh.position.x = position;
-        ringMesh.rotation.x = -0.5 * Math.PI;
-    }
-    scene.add(obj);
-    mesh.position.x = position;
-    return {mesh, obj}
+    const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+    obj.add(ringMesh);
+    ringMesh.position.x = position;
+    ringMesh.rotation.x = -0.5 * Math.PI;
+  }
+  scene.add(obj);
+  mesh.position.x = position;
+  return { mesh, obj }
 }
 
 const mercury = createPlanete(3.2, mercuryTexture, 28);
@@ -218,14 +218,14 @@ const moon = createPlanete(1, moonTexture, 56);
 const mars = createPlanete(4, marsTexture, 78);
 const jupiter = createPlanete(12, jupiterTexture, 100);
 const saturn = createPlanete(10, saturnTexture, 138, {
-    innerRadius: 10,
-    outerRadius: 20,
-    texture: saturnRingTexture
+  innerRadius: 10,
+  outerRadius: 20,
+  texture: saturnRingTexture
 });
 const uranus = createPlanete(7, uranusTexture, 176, {
-    innerRadius: 7,
-    outerRadius: 12,
-    texture: uranusRingTexture
+  innerRadius: 7,
+  outerRadius: 12,
+  texture: uranusRingTexture
 });
 const neptune = createPlanete(7, neptuneTexture, 200);
 const pluto = createPlanete(2.8, plutoTexture, 216);
@@ -234,10 +234,10 @@ const pluto = createPlanete(2.8, plutoTexture, 216);
 //background
 //inverse sphere with space.jpg seen on inside
 
-const geometry25 = new THREE.SphereGeometry( 777, 192, 108, 0, Math.PI * 2, 0, Math.PI );
-const material25 = new THREE.MeshBasicMaterial({map: spaceTexture, side: THREE.BackSide, wireframe: false} );
-const sphere = new THREE.Mesh( geometry25, material25 );
-scene.add( sphere );
+const geometry25 = new THREE.SphereGeometry(777, 192, 108, 0, Math.PI * 2, 0, Math.PI);
+const material25 = new THREE.MeshBasicMaterial({ map: spaceTexture, side: THREE.BackSide, wireframe: false });
+const sphere = new THREE.Mesh(geometry25, material25);
+scene.add(sphere);
 
 // Avatar
 
@@ -281,18 +281,15 @@ const joseph = new THREE.Mesh(new THREE.BoxGeometry(66, 66, 66), new THREE.MeshB
 
 scene.add(joseph);
 
-
 // Moon 2
 
 const moon2Texture = new THREE.TextureLoader().load('moon.jpg');
 
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 
-const moon2 = new THREE.Mesh(new THREE.SphereGeometry(3, 11, 11), new THREE.MeshStandardMaterial({map: moon2Texture,normalMap: normalTexture,}));
+const moon2 = new THREE.Mesh(new THREE.SphereGeometry(3, 11, 11), new THREE.MeshStandardMaterial({ map: moon2Texture, normalMap: normalTexture, }));
 
 scene.add(moon2);
-
-
 
 //object positionings
 
@@ -373,7 +370,7 @@ torus12.position.z = 3;
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-  
+
   moon2.rotation.x += 0.03;
   moon2.rotation.y += 0.03;
   moon2.rotation.z += 0.03;
@@ -409,7 +406,7 @@ moveCamera();
 //navigate to different sections of document on click nav bar links direct the user to the correctly named id section of the document    
 function navToAbout() {
   document.getElementById("about").scrollIntoView();
-}   
+}
 function navToProjects() {
   document.getElementById("projects").scrollIntoView();
 }
@@ -426,7 +423,7 @@ function resize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 //resize window event listener
-window.addEventListener('resize', resize, false);   
+window.addEventListener('resize', resize, false);
 init();
 
 //resize animation
@@ -440,30 +437,30 @@ function init() {
 function animate() {
   requestAnimationFrame(animate);
 
-    //Self-rotation
-    sun.rotateY(0.004);
-    mercury.mesh.rotateY(0.004);
-    venus.mesh.rotateY(0.002);
-    earth.mesh.rotateY(0.02);
-    moon.mesh.rotateY(0.02);
-    mars.mesh.rotateY(0.018);
-    jupiter.mesh.rotateY(0.04);
-    saturn.mesh.rotateY(0.038);
-    uranus.mesh.rotateY(0.03);
-    neptune.mesh.rotateY(0.033);
-    pluto.mesh.rotateY(0.009);
+  //Self-rotation
+  sun.rotateY(0.004);
+  mercury.mesh.rotateY(0.004);
+  venus.mesh.rotateY(0.002);
+  earth.mesh.rotateY(0.02);
+  moon.mesh.rotateY(0.02);
+  mars.mesh.rotateY(0.018);
+  jupiter.mesh.rotateY(0.04);
+  saturn.mesh.rotateY(0.038);
+  uranus.mesh.rotateY(0.03);
+  neptune.mesh.rotateY(0.033);
+  pluto.mesh.rotateY(0.009);
 
-    //Around-sun-rotation
-    mercury.obj.rotateY(0.04);
-    venus.obj.rotateY(0.015);
-    earth.obj.rotateY(0.01);
-    moon.obj.rotateY(0.01);
-    mars.obj.rotateY(0.008);
-    jupiter.obj.rotateY(0.002);
-    saturn.obj.rotateY(0.0009);
-    uranus.obj.rotateY(0.0004);
-    neptune.obj.rotateY(0.00033);
-    pluto.obj.rotateY(0.00025);
+  //Around-sun-rotation
+  mercury.obj.rotateY(0.04);
+  venus.obj.rotateY(0.015);
+  earth.obj.rotateY(0.01);
+  moon.obj.rotateY(0.01);
+  mars.obj.rotateY(0.008);
+  jupiter.obj.rotateY(0.002);
+  saturn.obj.rotateY(0.0009);
+  uranus.obj.rotateY(0.0004);
+  neptune.obj.rotateY(0.00033);
+  pluto.obj.rotateY(0.00025);
 
 
   torus.rotation.x += 0.003;
@@ -485,7 +482,7 @@ function animate() {
   torus5.rotation.x += 0.0003;
   torus5.rotation.y += 0.003;
   torus5.rotation.z += 0.0003;
- 
+
   torus6.rotation.x += -0.0003;
   torus6.rotation.y += 0.003;
   torus6.rotation.z += 0.0003;
@@ -514,11 +511,10 @@ function animate() {
   torus12.rotation.y += -0.0003;
   torus12.rotation.z += -0.003;
 
-
   moon2.rotation.x += 0.0006;
   moon2.rotation.y += 0.006;
   moon2.rotation.z += 0.0006;
-  
+
   joe.rotation.x += 0.0003;
   joe.rotation.y += 0.003;
   joe.rotation.z += 0.0003;
@@ -541,8 +537,8 @@ function animate() {
 
 
   //controls.update();
-renderer.render(scene, camera);
-  
+  renderer.render(scene, camera);
+
 }
 
 animate();
