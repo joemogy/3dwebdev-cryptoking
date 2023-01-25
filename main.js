@@ -30,7 +30,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.y = 36;
+camera.position.y = 33;
 camera.position.setZ(256);
 camera.position.setX(256);
 
@@ -297,25 +297,37 @@ moon2.position.setX(99);
 moon2.position.y = 99;
 moon2.position.z = 99;
 
-joe.position.setX(-99);
+joe.position.setX(66);
 joe.position.y = 66;
-joe.position.z = 99;
+joe.position.z = 199;
+
+// joe.position.setX(-99);
+// joe.position.y = 66;
+// joe.position.z = 99;
 
 joeai.position.setX(111);
 joeai.position.y = 69;
 joeai.position.z = -99;
 
-joey.position.setX(166);
+// joey.position.setX(166);
+// joey.position.y = 66;
+// joey.position.z = 111;
+
+joey.position.setX(-99);
 joey.position.y = 66;
-joey.position.z = 111;
+joey.position.z = 166;
 
 josephai.position.setX(-99);
 josephai.position.y = 66;
 josephai.position.z = -99;
 
-joseph.position.setX(66);
+// joseph.position.setX(66);
+// joseph.position.y = 66;
+// joseph.position.z = 222;
+
+joseph.position.setX(166);
 joseph.position.y = 66;
-joseph.position.z = 222;
+joseph.position.z = 111;
 
 torus.position.setX(-15);
 torus.position.y = 15;
@@ -396,7 +408,7 @@ function moveCamera() {
   joseph.rotation.z += 0.01;
 
   camera.position.x = t * -0.001;
-  camera.rotation.y = t * -0.001;
+  camera.rotation.y = t * -0.000333;
   camera.position.z = t * -0.01;
 }
 
