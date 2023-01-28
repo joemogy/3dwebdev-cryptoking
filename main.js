@@ -305,7 +305,7 @@ joe.position.z = 199;
 // joe.position.y = 66;
 // joe.position.z = 99;
 
-joeai.position.setX(111);
+joeai.position.setX(99);
 joeai.position.y = 69;
 joeai.position.z = -99;
 
